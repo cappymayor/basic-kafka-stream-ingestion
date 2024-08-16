@@ -7,7 +7,6 @@ logging.basicConfig(format='%(asctime)s %(levelname)s:%(name)s:%(message)s')
 logging.getLogger().setLevel(20)
 
 
-
 def random_profile_data_generator(total_records: int):
     """
        Function that generates random profile for
@@ -24,5 +23,5 @@ def random_profile_data_generator(total_records: int):
 
     df = pd.DataFrame(
         [sample.profile() for profile in range(total_records)])
-    # logging.info(f"Dataframe created with {df.shape[1]}\
-    #                           records and {df.shape[0]} columns")
+    logging.info(f"Dataframe created with {df.shape[1]}\
+                              records and {df.shape[0]} columns")
