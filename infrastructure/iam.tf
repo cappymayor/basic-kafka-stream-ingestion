@@ -44,7 +44,7 @@ resource "aws_iam_policy" "data_consumer_policy" {
         ]
         Resource = [
           "arn:aws:s3:::random-profile-extraction",
-          "arn:aws:s3:::random-profile-extraction/*"
+          "arn:aws:s3:::random-profile-extraction/*",
         ]
       },
     ]
