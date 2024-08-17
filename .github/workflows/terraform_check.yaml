@@ -1,4 +1,4 @@
-name: Test pipeline
+name: Terraform Linter CI
 
 on:
   push:

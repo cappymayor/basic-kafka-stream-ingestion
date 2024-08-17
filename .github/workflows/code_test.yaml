@@ -1,4 +1,4 @@
-name: Terraform CI
+name: Code Linter CI
 
 on:
   push:
