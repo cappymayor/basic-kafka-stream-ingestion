@@ -1,9 +1,11 @@
-name: CI pipeline
+name: Test pipeline
 
 on:
   push:
     branches:
       - '**' # matches every branch
+    paths:
+      - 'infrastructure/'
 
 defaults:
   run:
