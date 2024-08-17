@@ -8,7 +8,7 @@ on:
       - 'infrastructure/'
 
 jobs:
-  ci:
+  lint:
     name: ci
     runs-on: ubuntu-latest
     timeout-minutes: 10

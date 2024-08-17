@@ -1,7 +1,7 @@
 # Terraform configuration to provision an s3 bucket in aws
 
 resource "aws_s3_bucket" "random_user_bucket" {
-  bucket = "random-profile-extraction"
+  bucket = "random-profile-extractionn"
 
   tags = {
     Name        = "My bucket"
