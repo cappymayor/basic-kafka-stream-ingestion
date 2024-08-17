@@ -5,7 +5,7 @@ on:
     branches:
       - '**' # matches every branch
     paths:
-      - 'infrastructure/'
+      - 'infrastructure/*.tf'
 
 defaults:
   run:
