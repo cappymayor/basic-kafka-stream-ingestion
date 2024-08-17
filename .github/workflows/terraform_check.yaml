@@ -5,11 +5,7 @@ on:
     branches:
       - '**' # matches every branch
     paths:
-      - 'infrastructure/*.tf'
-
-defaults:
-  run:
-    working-directory: "infrastructure/"
+      - 'infrastructure/'
 
 jobs:
   ci:

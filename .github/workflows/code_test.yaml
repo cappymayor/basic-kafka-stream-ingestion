@@ -5,7 +5,7 @@ on:
     branches:
       - "**" # matches every branch
     paths-ignore:
-      - 'infrastructure/'
+      - 'infrastructure/*.tf'
       
 jobs:
   lint:
