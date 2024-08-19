@@ -2,6 +2,29 @@ from quixstreams import Application
 import awswrangler as wr
 import boto3
 import json
+import pandas as pd
+import logging
+
+logging.basicConfig(format='%(asctime)s %(levelname)s:%(name)s:%(message)s')
+logging.getLogger().setLevel(20)
+
+client = boto3.client('ssm')
+
+
+access_key = client.get_parameter(
+    Name='/dev/data_consumer/access_key'
+)
+
+secret_key = client.get_parameter(
+    Name='/dev/data_consumer/secret_key'
+)
+
+session = boto3.Session(
+            aws_access_key_id=access_key["Parameter"]["Value"],
+            aws_secret_access_key=secret_key["Parameter"]["Value"],
+            region_name="eu-central-1"
+    )
+
 
 def data_consumer():
     """
@@ -25,7 +48,17 @@ def data_consumer():
                 print("Waiting for event from kafka...")
             else:
                 value = json.loads(event_poll.value())
-                print(value)
+                df = pd.json_normalize(value)
+                wr.s3.to_parquet(
+                    df=df,
+                    path="s3://random-profile-extractionn",
+                    boto3_session=session,
+                    mode="append",
+                    dataset=True
+                )
+                logging.info("Message written to s3")
+
+                
             
 
 data_consumer()

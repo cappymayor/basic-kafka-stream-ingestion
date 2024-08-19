@@ -1,6 +1,7 @@
 import logging
 import json
 import time
+import pandas
 from datetime import datetime
 from quixstreams import Application
 from faker import Faker
