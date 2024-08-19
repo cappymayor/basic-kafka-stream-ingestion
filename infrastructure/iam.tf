@@ -10,7 +10,7 @@ resource "aws_iam_user" "data_consumer_user" {
 
 # Create aws access key and secret key for airflow to programatically interact with AWS
 resource "aws_iam_access_key" "data_consumer_credentials" {
-  user = aws_iam_user.data_consumer.name
+  user = aws_iam_user.data_consumer_user.name
 }
 
 # saving the output of the access key into AWS SSM parameters store
@@ -53,6 +53,6 @@ resource "aws_iam_policy" "data_consumer_policy" {
 
 # attach the IAM policy to airflow user 
 resource "aws_iam_user_policy_attachment" "test-attach" {
-  user       = aws_iam_user.airflow_user.name
-  policy_arn = aws_iam_policy.airflow_policy.arn
+  user       = aws_iam_user.data_consumer_user.name
+  policy_arn = aws_iam_policy.data_consumer_policy.arn
 }
