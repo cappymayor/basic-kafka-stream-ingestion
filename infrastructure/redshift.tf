@@ -60,7 +60,7 @@ resource "aws_iam_role_policy_attachment" "role_policy_attach" {
   policy_arn = aws_iam_policy.redshift_policy.arn
 }
 
-# create random admin password to be used for redshift 
+# create random admin password to be used for redshift.
 resource "random_password" "password" {
   length  = 24
   special = false
