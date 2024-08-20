@@ -19,12 +19,12 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v3
 
-    - name: terraform fmt
-      uses: dflook/terraform-fmt-check@v1
-      with:
-        path: infrastructure
-
     - name: terraform validate
       uses: dflook/terraform-validate@v1
       with:
         path: 'infrastructure/'
+
+    - name: terraform fmt
+      uses: dflook/terraform-fmt-check@v1
+      with:
+        path: infrastructure
