@@ -5,7 +5,7 @@ on:
     branches:
       - "**"
     paths:
-      - './infrastructure/'
+      - 'infr**'
 
 jobs:
   ci:
