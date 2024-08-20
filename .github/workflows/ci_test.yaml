@@ -1,0 +1,25 @@
+name: CI pipeline
+
+on:
+  push:
+    branches:
+      - '**' # matches every branch
+
+defaults:
+  run:
+    working-directory: "infrasructure/"
+
+jobs:
+  ci:
+    name: ci
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v3
+
+    - name: terraform fmt
+      uses: dflook/terraform-fmt-check@v1
+      with:
+        path: infrasructure
