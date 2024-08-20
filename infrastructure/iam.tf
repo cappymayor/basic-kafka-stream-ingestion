@@ -4,7 +4,7 @@ resource "aws_iam_user" "data_consumer_user" {
 
   tags = {
     service     = "data_consumer"
-    environment  = "dev"
+    environment = "dev"
   }
 }
 
