@@ -1,28 +1,43 @@
 name: Terraform Linter CI
 
-on:
-  push:
-    branches:
-      - '**' # matches every branch
-    paths:
-      - 'infrastructure/'
+on: [push]
 
 jobs:
-  lint:
-    name: ci
+  validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-
+    name: Validate Terraform module
     steps:
-    - name: Check out repository code
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: terraform fmt
-      uses: dflook/terraform-fmt-check@v1
-      with:
-        path: infrastructure/
+      - name: terraform validate
+        uses: dflook/terraform-validate@v1
+        with:
+          path: 'infrastructure/'
 
-    - name: terraform validate
-      uses: dflook/terraform-validate@v1
-      with:
-        path: infrastructure/
+# on:
+#   push:
+#     branches:
+#       - '**' # matches every branch
+#     paths:
+#       - 'infrastructure/'
+
+# jobs:
+#   lint:
+#     name: ci
+#     runs-on: ubuntu-latest
+#     timeout-minutes: 10
+
+#     steps:
+#     - name: Check out repository code
+#       uses: actions/checkout@v3
+
+#     - name: terraform fmt
+#       uses: dflook/terraform-fmt-check@v1
+#       with:
+#         path: infrastructure/
+
+#     - name: terraform validate
+#       uses: dflook/terraform-validate@v1
+#       with:
+#         path: infrastructure/
