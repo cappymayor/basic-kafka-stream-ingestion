@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "random_user_bucket" {
   bucket = "random-profile-extraction"
 
   tags = {
-    Name        = "My buckets"
+    Name        = "My bucket"
     Environment = "Dev"
   }
 }
