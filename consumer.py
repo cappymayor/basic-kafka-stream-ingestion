@@ -29,8 +29,8 @@ session = boto3.Session(
 
 def data_consumer():
     """
-    Basic consumer application reading from 
-    a kafka topic, write it to s3 and register the 
+    Basic consumer application reading from
+    a kafka topic, write it to s3 and register the
     object in a glue data catalog database.
     """
     app = Application(
@@ -62,7 +62,5 @@ def data_consumer():
                 )
                 logging.info("Message written to s3")
 
-                
-            
 
 data_consumer()

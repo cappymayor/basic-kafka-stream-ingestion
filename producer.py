@@ -56,4 +56,5 @@ def event_sender():
             logging.info("Message sent to Kafka. Sleeping...")
             time.sleep(60)
 
+
 event_sender()
