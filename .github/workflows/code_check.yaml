@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - "**" # matches every branch
-    paths-ignore:
-      - 'infrastructure/'
       
 jobs:
   lint:
