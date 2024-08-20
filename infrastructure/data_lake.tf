@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "random_user_bucket" {
 
   tags = {
     Name        = "My buckets"
-    Environment = "Develop"
+    Environment = "Dev"
   }
 }
 
