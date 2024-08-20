@@ -5,7 +5,7 @@ on:
     branches:
       - "**" # matches every branch
     paths:
-      - "./*.py"
+      - "*.py"
       
 jobs:
   lint:
