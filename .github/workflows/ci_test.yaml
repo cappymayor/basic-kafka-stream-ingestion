@@ -2,15 +2,8 @@ name: CI pipeline
 
 on:
   push:
-    # branches:
-    #   - '**' # matches every branch
-
     paths:
       - 'infrastructure/'
-
-# defaults:
-#   run:
-#     working-directory: "infrasructure/"
 
 jobs:
   ci:
