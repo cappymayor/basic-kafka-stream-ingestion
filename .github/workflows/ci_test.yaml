@@ -5,7 +5,7 @@ on:
     branches:
       - "**"
     paths:
-      - '**/*.tf'
+      - 'infrastructure/*.tf'
 
 jobs:
   ci:
