@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - "**" # matches every branch
-    paths-ignore:
-      - "**/*.tf"
+    paths:
+      - "**/*.py"
       
 jobs:
   lint:
