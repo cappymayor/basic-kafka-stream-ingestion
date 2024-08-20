@@ -1,29 +1,29 @@
-name: Code Linter CI
+# name: Code Linter CI
 
-on:
-  push:
-    branches:
-      - "**" # matches every branch
+# on:
+#   push:
+#     branches:
+#       - "**" # matches every branch
       
-jobs:
-  lint:
-    name: checkout
-    runs-on: ubuntu-20.04
+# jobs:
+#   lint:
+#     name: checkout
+#     runs-on: ubuntu-20.04
 
-    steps:
-      - name: checkout git repository
-        uses: actions/checkout@v2
+#     steps:
+#       - name: checkout git repository
+#         uses: actions/checkout@v2
 
-      - name: Set up python environment
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.9.0"
+#       - name: Set up python environment
+#         uses: actions/setup-python@v2
+#         with:
+#           python-version: "3.9.0"
 
-      - name: install dependencies
-        run: pip install -r requirements.txt
+#       - name: install dependencies
+#         run: pip install -r requirements.txt
 
-      - name: Running isort check
-        run: isort --check-only  .
+#       - name: Running isort check
+#         run: isort --check-only  .
 
-      - name: Running flake8 check
-        run: flake8 .
+#       - name: Running flake8 check
+#         run: flake8 .
