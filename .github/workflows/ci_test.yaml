@@ -2,11 +2,10 @@ name: CI pipeline
 
 on:
   push:
-
     branches:
       - "**"
     paths:
-      - 'infrastructure/**'
+      - '**'
 
 jobs:
   ci:
