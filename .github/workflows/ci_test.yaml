@@ -5,9 +5,12 @@ on:
     branches:
       - '**' # matches every branch
 
-defaults:
-  run:
-    working-directory: "infrasructure/"
+    paths:
+      - 'infrastructure/'
+
+# defaults:
+#   run:
+#     working-directory: "infrasructure/"
 
 jobs:
   ci:
