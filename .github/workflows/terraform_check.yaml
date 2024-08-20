@@ -1,6 +1,10 @@
 name: Terraform Linter CI
 
-on: [push]
+on: 
+  push:
+    paths:
+      - 'infrastructure/'
+
 
 jobs:
   validate:
