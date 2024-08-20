@@ -22,7 +22,7 @@ def random_profile():
     """
 
     sample = Faker()
-    logging.info("finished faker module instantiation")
+    logging.info("finished faker module instantiation...")
 
     event_payload = {
         "full_name": sample.name(),
