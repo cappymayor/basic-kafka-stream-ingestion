@@ -1,7 +1,6 @@
 import logging
 import json
 import time
-import pandas
 from datetime import datetime
 from quixstreams import Application
 from faker import Faker
@@ -26,6 +25,7 @@ def random_profile():
 
     event_payload = {
         "full_name": sample.name(),
+        "address": sample.address(),
         "last_name": sample.last_name(),
         "card_provider": sample.credit_card_provider(),
         "credit_card_number": sample.credit_card_number(),
@@ -49,7 +49,7 @@ def event_sender():
         while True:
             event = random_profile()
             producer.produce(
-                topic="random-profile",
+                topic="test",
                 value=json.dumps(event),
             )
             logging.info("Message sent to Kafka. Sleeping...")

@@ -39,7 +39,7 @@ def data_consumer():
     )
 
     with app.get_consumer() as consumer:
-        consumer.subscribe(["random-profile"])
+        consumer.subscribe(["test"])
 
         while True:
             event_poll = consumer.poll(10)
@@ -51,9 +51,12 @@ def data_consumer():
                 df = pd.json_normalize(value)
                 wr.s3.to_parquet(
                     df=df,
-                    path="s3://random-profile-extractionn",
+                    path="s3://random-profile-extraction/random_customers/",
                     boto3_session=session,
                     mode="append",
+                    database="random_profile",
+                    table="random_customers",
+                    schema_evolution=True,
                     dataset=True
                 )
                 logging.info("Message written to s3")
