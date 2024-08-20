@@ -11,7 +11,7 @@ name: CI pipeline
 on:
   push:
     paths:
-      - infrastructure/**
+      - infrastructure/*.tf
 
 jobs:
   ci:
