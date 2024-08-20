@@ -1,12 +1,17 @@
 name: CI pipeline
 
-on:
-  push:
-    branches:
-      - '**' # matches every branch
+# on:
+#   push:
+#     branches:
+#       - '**' # matches every branch
 
     # paths:
     #   - 'infrastructure/'
+
+on:
+  push:
+    paths:
+      - infrastructure/**
 
 jobs:
   ci:
