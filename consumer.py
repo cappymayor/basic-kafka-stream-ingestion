@@ -31,7 +31,7 @@ def data_consumer():
     """
     Basic consumer application reading from
     a kafka topic, write it to s3 and register the
-    object in a glue data catalog database
+    object in a glue data catalog database.
     """
     app = Application(
         broker_address="localhost:9092",
