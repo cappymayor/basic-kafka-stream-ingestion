@@ -10,6 +10,7 @@ on:
 
 jobs:
   build:
+    name: push to dockerhub
     needs: ['lint']
     runs-on: ubuntu-latest
     steps:
