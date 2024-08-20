@@ -23,3 +23,8 @@ jobs:
       uses: dflook/terraform-fmt-check@v1
       with:
         path: infrastructure
+
+    - name: terraform validate
+      uses: dflook/terraform-validate@v1
+      with:
+        path: 'infrastructure/'
