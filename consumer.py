@@ -1,9 +1,10 @@
-from quixstreams import Application
+import json
+import logging
+
 import awswrangler as wr
 import boto3
-import json
 import pandas as pd
-import logging
+from quixstreams import Application
 
 logging.basicConfig(format='%(asctime)s %(levelname)s:%(name)s:%(message)s')
 logging.getLogger().setLevel(20)

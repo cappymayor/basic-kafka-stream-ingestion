@@ -1,9 +1,10 @@
-import logging
 import json
+import logging
 import time
 from datetime import datetime
-from quixstreams import Application
+
 from faker import Faker
+from quixstreams import Application
 
 logging.basicConfig(format='%(asctime)s %(levelname)s:%(name)s:%(message)s')
 logging.getLogger().setLevel(20)
