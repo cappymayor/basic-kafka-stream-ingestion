@@ -53,7 +53,7 @@ def event_sender():
                 topic="test",
                 value=json.dumps(event),
             )
-            logging.info("Message sent to Kafka. Sleeping...")
+            logging.info("Message sent to Kafka. Sleeping....")
             time.sleep(60)
 
 
