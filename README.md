@@ -1,7 +1,11 @@
-# basic-kafka-stream-ingestion
+# OVERVIEW
  A low-level stream processing ingestion that starts from producing messages to Kafka Topic and another Consumer app processing the messages into the data lake , the messages in the data lake are then made available in Glue, the underlying Glue table is then queryable in Redshift using the Redshift Spectrum feature.
 
-![basic_kafka_ingestion](https://github.com/user-attachments/assets/8d713ac6-73ac-4be4-a8b4-293ae4904d12)
+# ARCHITECTURE
+
+
+<img width="1279" alt="Screenshot 2024-08-22 at 01 07 38" src="https://github.com/user-attachments/assets/a63e7441-8320-48cf-adf2-1704dfd7fa95">
+
 
 # Tech stacks used
 - Python
@@ -42,6 +46,8 @@
   - file containing instruction that will enable us create an image based on our app
 - requirements.txt
   - containing dependency library that are used in linting our codes.
+ 
+# STEPS TO USE THE REPOSITORY
 
    
   
