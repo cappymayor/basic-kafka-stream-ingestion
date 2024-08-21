@@ -1,12 +1,17 @@
 name: ci
 
 on:
-  push:
-    branches:
-      - "**"
+  workflow_run:
+    workflows: ["Code Linter CI"]
+    types: [completed]
+    # branches:
+    #   - 'releases/**'
+  # push:
+  #   branches:
+  #     - "**"
 
-    paths:
-      - "**/*.py"
+  #   paths:
+  #     - "**/*.py"
 
 jobs:
   build:
@@ -28,4 +33,4 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+          tags: ${{ vars.DOCKER_USERNAME }}/${{ vars.DOCKER_HUB_REPOSITORY }}:v1.0.0
