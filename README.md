@@ -1,5 +1,5 @@
 # basic-kafka-stream-ingestion
- A low-level stream processing ingestion that starts from producing messages to Kafka Topic and another Consumer app processing the messages into the data lake , the messages in the data lake are then made available in Glue.
+ A low-level stream processing ingestion that starts from producing messages to Kafka Topic and another Consumer app processing the messages into the data lake , the messages in the data lake are then made available in Glue, the underlying Glue table is then queryable in Redshift using the Redshift Spectrum feature.
 
 # Tech stacks used
 - Python
