@@ -18,7 +18,7 @@ def random_profile():
 
        params:
             total_records: Total number of random profiles
-            to generate, needs to be an integer, e.g 100, 2.
+            to generate, needs to be an integer, e.g 100, 2..
     """
 
     sample = Faker()
