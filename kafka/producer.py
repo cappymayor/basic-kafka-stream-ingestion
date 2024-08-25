@@ -39,7 +39,7 @@ def random_profile():
 def event_sender():
     """
     Basic Producer application writing random
-    data as event into Kafka
+    data as event into Kafka.
     """
     app = Application(
         broker_address="localhost:9092",
