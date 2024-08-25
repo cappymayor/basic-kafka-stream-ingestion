@@ -6,7 +6,9 @@
 # ARCHITECTURE
 
 
-<img width="1279" alt="Screenshot 2024-08-22 at 01 07 38" src="https://github.com/user-attachments/assets/a63e7441-8320-48cf-adf2-1704dfd7fa95">
+![grover_data_lake_setup (1)](https://github.com/user-attachments/assets/db608035-8746-4e83-a26e-87b3ade69526)
+
+
 
 # ARCHITECTURE SUMMARY
 - Source of our events is from [Faker library](https://faker.readthedocs.io/en/master/)
