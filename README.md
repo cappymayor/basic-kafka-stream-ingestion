@@ -1,6 +1,8 @@
 # OVERVIEW
  A low-level stream processing ingestion that starts from producing messages to Kafka Topic and another Consumer app processing the messages into the data lake , the messages in the data lake are then made available in Glue, the underlying Glue table is then queryable in Redshift using the Redshift Spectrum feature.
 
+ *NOTE: This streaming pipeline is not recommended in production, this pipeline writes one message at a time to s3, which generates lots of small files in s3, reading small small files in s3 is VERY EXPENSIVE when you are doing a fiull scan of the entire objects in the bucket. This is only a basic pipeline to give people the full picture of the usage of Kafka and with couple of technologies.*
+
 # ARCHITECTURE
 
 
