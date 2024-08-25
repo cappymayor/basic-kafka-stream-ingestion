@@ -1,17 +1,9 @@
-name: ci
+name: CD
 
 on:
   workflow_run:
-    workflows: ["Code Linter CI"]
+    workflows: ["Code Check CI Pipeline"]
     types: [completed]
-    # branches:
-    #   - 'releases/**'
-  # push:
-  #   branches:
-  #     - "**"
-
-  #   paths:
-  #     - "**/*.py"
 
 jobs:
   build:

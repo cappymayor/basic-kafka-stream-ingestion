@@ -22,7 +22,7 @@ def random_profile():
     """
 
     sample = Faker()
-    logging.info("finished faker module instantiation..")
+    logging.info("finished faker package instantiation....")
 
     event_payload = {
         "full_name": sample.name(),
@@ -48,13 +48,10 @@ def event_sender():
 
     with app.get_producer() as producer:
         while True:
-            event = random_profile()
+            message = random_profile()
             producer.produce(
-                topic="test",
-                value=json.dumps(event),
+                topic="webinar-demo",
+                value=json.dumps(message),
             )
-            logging.info("Message sent to Kafka. Sleeping......")
+            logging.info("Message serialised and sent to Kafka. Sleeping......")
             time.sleep(60)
-
-
-event_sender()

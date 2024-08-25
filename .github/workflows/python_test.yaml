@@ -1,9 +1,9 @@
-name: Code Linter CI
+name: Code Check CI Pipeline
 
 on:
   push:
     branches:
-      - "**" # matches every branch
+      - "**"
     paths:
       - "**/*.py"
       

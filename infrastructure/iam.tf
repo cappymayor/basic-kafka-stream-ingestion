@@ -1,4 +1,4 @@
-# create a dedicated user for airflow instance
+# create a dedicated user for consumer app
 resource "aws_iam_user" "data_consumer_user" {
   name = "data_consumer"
 
@@ -8,7 +8,7 @@ resource "aws_iam_user" "data_consumer_user" {
   }
 }
 
-# Create aws access key and secret key for airflow to programatically interact with AWS
+# Create aws access key and secret key for consumer to programatically interact with AWS
 resource "aws_iam_access_key" "data_consumer_credentials" {
   user = aws_iam_user.data_consumer_user.name
 }
@@ -27,7 +27,7 @@ resource "aws_ssm_parameter" "airflow_secret_key" {
   value = aws_iam_access_key.data_consumer_credentials.secret
 }
 
-# defining AWS IAM policy which highlight what airflow user can do and cant in AWS
+# defining AWS IAM policy which highlight what the consumer user can do and cant in AWS
 resource "aws_iam_policy" "data_consumer_policy" {
   name        = "data-consumer-policy"
   description = "Dedicated policy for data consumer app "

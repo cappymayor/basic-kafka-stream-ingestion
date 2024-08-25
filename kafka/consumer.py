@@ -35,20 +35,21 @@ def data_consumer():
     """
     app = Application(
         broker_address="localhost:9092",
-        consumer_group="random-profile",
+        consumer_group="webinar-demo",
         auto_offset_reset="earliest",
     )
 
     with app.get_consumer() as consumer:
-        consumer.subscribe(["test"])
+        consumer.subscribe(["webinar-demo"])
 
         while True:
             event_poll = consumer.poll(10)
 
             if event_poll is None:
-                print("Waiting for event from kafka...")
+                logging.info("Waiting for event from kafka...")
             else:
                 value = json.loads(event_poll.value())
+                logging.info("message deserialised ")
                 df = pd.json_normalize(value)
                 wr.s3.to_parquet(
                     df=df,
@@ -61,6 +62,3 @@ def data_consumer():
                     dataset=True
                 )
                 logging.info("Message written to s3")
-
-
-data_consumer()
