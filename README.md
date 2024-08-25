@@ -50,4 +50,12 @@
   - containing dependency library that are used in linting our codes.
  
    
-  
+# RESOURCES
+- Run kafka locally: https://kafka.apache.org/quickstart
+  - make sure to install Java locally first
+    - Mac user can run  `brew install openjdk` on their terminal, make sure you have brew installed, if not just run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` on your terminal.
+    - Windows can follow this https://www.java.com/download/ie_manual.jsp
+- Build producer and consumer application Using QuixStreams. Full Documentation here https://quix.io/docs/get-started/welcome.html
+  - Producer: https://www.youtube.com/watch?v=D2NYvGlbK0M&list=PL5gMntduShmyJd2fsflN1jwLW9XtDMFAX&index=6
+  - Consumer: https://www.youtube.com/watch?v=eCsSAzTy5cE&list=PL5gMntduShmyJd2fsflN1jwLW9XtDMFAX&index=4
+
