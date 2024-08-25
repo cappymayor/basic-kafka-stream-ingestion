@@ -53,5 +53,5 @@ def event_sender():
                 topic="webinar-demo",
                 value=json.dumps(message),
             )
-            logging.info("Message serialised and sent to Kafka. Sleeping......")
+            logging.info("Message serialised and sent to Kafka. Sleeping...")
             time.sleep(60)
