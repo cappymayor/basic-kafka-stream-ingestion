@@ -7,7 +7,12 @@
 
 
 <img width="1279" alt="Screenshot 2024-08-22 at 01 07 38" src="https://github.com/user-attachments/assets/a63e7441-8320-48cf-adf2-1704dfd7fa95">
-
+# ARCHITECTURE SUMMARY
+- Source of our events is from [Faker library](https://faker.readthedocs.io/en/master/)
+- A producer application written in python captures random events from faker and write to a Kafka topic.
+- A consumer application on the other end read from the topic in Kafka and write to s3, the consumer also register the object in the glue catalog database in a specific table. The consumer must have the permission to do that. Make sure you understand AWS IAM.
+- Data Engineer who build the pipeline can already have a first look of the data by quering the Glue table from Athena.
+- To be able to query the data on the fly in Redshift, we leverage a Redshift spectrum. In this case, Redshift must have the permission to read  the underlying obkect in s3 and the underlying glue table which the s3 object is cataloged.
 
 # Tech stacks used
 - Python
