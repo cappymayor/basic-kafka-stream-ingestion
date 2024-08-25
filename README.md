@@ -7,6 +7,7 @@
 
 
 <img width="1279" alt="Screenshot 2024-08-22 at 01 07 38" src="https://github.com/user-attachments/assets/a63e7441-8320-48cf-adf2-1704dfd7fa95">
+
 # ARCHITECTURE SUMMARY
 - Source of our events is from [Faker library](https://faker.readthedocs.io/en/master/)
 - A producer application written in python captures random events from faker and write to a Kafka topic.
