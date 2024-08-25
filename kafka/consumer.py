@@ -35,12 +35,12 @@ def data_consumer():
     """
     app = Application(
         broker_address="localhost:9092",
-        consumer_group="webinar-demo",
+        consumer_group="faker-data-consumer",
         auto_offset_reset="earliest",
     )
 
     with app.get_consumer() as consumer:
-        consumer.subscribe(["webinar-demo"])
+        consumer.subscribe(["random-profile"])
 
         while True:
             event_poll = consumer.poll(10)

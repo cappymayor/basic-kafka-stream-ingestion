@@ -50,7 +50,7 @@ def event_sender():
         while True:
             message = random_profile()
             producer.produce(
-                topic="webinar-demo",
+                topic="random-profile",
                 value=json.dumps(message),
             )
             logging.info("Message serialised and sent to Kafka. Sleeping...")
