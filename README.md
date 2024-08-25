@@ -47,7 +47,5 @@
 - requirements.txt
   - containing dependency library that are used in linting our codes.
  
-# STEPS TO USE THE REPOSITORY
-
    
   
